@@ -1,0 +1,15 @@
+sudo apt-get -y update
+apt-get install -y exploitdb
+
+sudo apt-get -y install software-properties-common
+sudo apt-get -y install flatpak
+
+echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" | sudo    tee /etc/apt/sources.list.d/vs-code.list
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo apt-get -y install code
+
+xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+xrandr --addmode Virtual1 1920x1080
+xrandr --output Virtual1 --mode 1920x1080
+
